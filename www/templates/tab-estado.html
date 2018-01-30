@@ -1,0 +1,45 @@
+  <div class="card loading" ng-show="loading">
+    <p class="text-center">cargando...</p>
+  </div>
+  <ion-content class="has-header padding">
+  <section class="card" ng-show="result.bool && !loading">
+      <p class="text-center">datos no se encuentran</p>
+   </section>
+ 
+ <section class="tab-estado" ng-show="!loading && !result.bool">
+  	<div style="position:relative">
+  		<div class="pestana">
+  			<p>{{name}}</p>
+  		</div>
+    	<div class="card">
+      		<h3 class="text-center balanced">Zona de trabajo</h3>
+  			<p class="text-center balanced">(normalizada de 0 al 100%)</p>
+  			<div class="progress">
+  				<div ng-style="progress"></div>
+			</div>
+  			<h3 class="text-center dark">Zona alta</h3>
+  			<p class="text-center">ultima medida : <b>{{result.date}}</b> </p>
+    	</div>
+	</div>
+
+	<div class="card">
+		<h3 class="text-center balanced">Sondas de referencia </h3>
+		<hr>
+		<ul class="list">
+    			<li class="item dark text-center" ng-repeat="item in result.sondas">
+					<p class="dark">{{item.name}} : {{item.value}}</p>
+					
+    			</li>
+			</ul>
+
+	</div>
+
+	<div class="card">
+		<h3 class="text-center balanced"> Otras Medidas </h3>
+		<p class="text-center"><b class="dark">T node :</b> {{result.node_t}} °C</p>
+		<p class="text-center"><b class="dark">T Suelo :</b>  {{result.floor_t}} °C</p>
+	</div>
+
+</section>
+ </ion-content>
+

@@ -1,0 +1,39 @@
+<ion-view>
+	<div class="card loading" ng-show="loading">
+    	<p class="text-center">cargando...</p>
+  	</div>
+  <ion-content class="has-header">
+  
+  	<section class="card" ng-show="result.bool && !loading">
+      <p class="text-center">datos no se encuentran</p>
+    </section>
+	
+
+   <section ng-show="!result.bool && !loading">
+
+   	<div class="card">
+   		<h2 class="text-center balanced">Descarga</h2>
+   		<p class="text-center">Ultimo pulso de riego medido</p>
+   		<p class="text-center"><b>{{result.date}}</b></p>
+   		<hr style="width:90%;margin-left:5%;background:#33cd5f">
+   		<h3 class="text-center">Registrado</h3>
+   		<p class="text-center">Inicio : {{result.init_hour}}</p>
+   		<p class="text-center">Fin : {{result.final_hour}}</p>
+   		<p class="text-center"><b>Duracion aprox :</b>  {{result.estimated_duration_minutes | number:2}} min </p>
+   		<p class="text-center"><b>Descarga :</b>  {{result.download | number:2}} m3 </p>
+   	</div>
+   	
+	<div class="card">
+		<h2 class="text-center balanced">Sistema de Riego</h2>
+		<p class="text-center"><b>Caudal teorico : </b> {{result.theoretical_flow | number:2}} m3</p>
+		<p class="text-center"><b>Caudal aprox : </b> {{(result.theoretical_flow + result.download)/2 | number:2}} </p>
+		<hr style="width:90%;margin-left:5%;background:#33cd5f">
+		<p class="text-center"><b>Desviacion : </b> {{result.flow_desviation | number:2}} </p>
+
+	</div>
+
+   </section>
+	
+
+  </ion-content>
+</ion-view>

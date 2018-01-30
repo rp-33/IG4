@@ -1,0 +1,33 @@
+<ion-view view-title="evol">
+ <div class="card loading" ng-show="loading">
+    <p class="text-center">cargando...</p>
+  </div>
+  <ion-content class="has-header evol">
+    <section class="card" ng-show="!result.bool && !loading">
+      <p class="text-center">datos no se encuentran</p>
+    </section>
+  <section ng-show="result.bool">
+  	<div class="card">
+  		<canvas id="line" class="chart chart-line" chart-data="data"
+		chart-labels="labels"  chart-series="series" chart-options="options"
+		chart-dataset-override="datasetOverride" chart-colors="color">
+		</canvas>
+
+  	</div>
+  	<div class="card tendencias">
+  		<h3 class="text-center">Sondas de Referencia</h3>
+  		<hr>
+  		<div class="row">
+  		<div class="img col col-20">
+  			<img ng-src="img/grafico-de-barras.png" alt="">
+        <p><b>{{result.trend | number:2}}</b> puntos </p> 
+  		</div>
+  		<div class="inf col col-80 text-center padding">
+        <p>{{result.sondas}}</p>
+  			
+  		</div>
+  	</div>
+  	</div>
+  </section>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,135 @@
+ion-content{
+	overflow-y:auto !important; 
+	overflow-x:hidden !important; 
+	background-image:url(../img/fondo.png);
+	background-size:100% 120%;
+	margin-bottom:18px !important;
+}
+ion-content.seasons{
+	margin-bottom:0px !important;
+}
+
+div.card.loading{
+	position: fixed;
+	width: 60%;
+	margin-left: 20%;
+	margin-top:70%;
+	z-index: 2;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+div.card.loading p{
+	margin-top: 10px
+}
+
+/*login*/
+.content-login{
+	width: 80%;
+	margin-left: 10%;
+	margin-top:calc(50% - 20px);
+
+
+}
+.content-login > p{
+	font-size: 1.3em;
+	color:#ff7525;
+}
+
+
+.content-login p span span:first-child{
+	color:#ff7525;
+
+}
+
+.content-login img{
+	width:100px;
+	height: 100px;
+	margin-left: calc(50% - 50px)
+}
+.content-login form div.list.list-inset label i {
+	position: absolute;
+	right: 5px;
+	top:17px;
+	font-size: 0.7em
+}
+.content-login form div.list.list-inset{
+	background: transparent;
+}
+.content-login form div.list.list-inset label {
+	border-radius: 10px;
+	width: 100% !important;
+	position: relative;
+}
+div.list-inset label input::placeholder { 
+	color: black;
+}
+div.list-inset label input::-webkit-input-placeholder { color: black; } 
+div.list-inset label input::-moz-placeholder { color: black; } 
+div.list-inset label input::-o-placeholder { color: black; }
+
+
+.content-login input[type="submit"]{
+	width: 95% !important;
+	left:2.5%;
+	border-radius: 10px;
+
+}
+
+
+
+/*Estado*/
+.tab-estado{
+	margin-top: 30px;
+}
+
+.tab-estado .pestana{
+	position: absolute;
+	background: #00b585;
+	top:-30px;
+	left: 8px;
+	height: 30px;
+	padding:0 35px;
+	z-index: -2;
+	border-radius: 7px 7px 0 0;
+	color:white;
+}
+.tab-estado .pestana p{
+	margin-top: 5px
+}
+.progress{
+	width: 95%;
+	height: 35px;
+	margin-left: 2.5%;
+	border-radius:3px;
+	border:1px solid black;
+}
+.progress div{
+	height: 100%;
+	background: #00b585;
+	-webkit-transition:all ease-in-out 1s;
+	-moz-transition:all ease-in-out 1s;
+	-o-transition:all ease-in-out 1s;
+	transition:all ease-in-out 1s;
+	width: 0%;
+}
+
+.tab-estado .Progress.bar div{
+	background: black;
+	width: 30%;
+}
+
+/*Evol*/
+ion-content.evol div.card.tendencias div.img{
+	width: 30%;
+	margin-left: 15px;
+
+}
+
+ion-content.evol div.card.tendencias div img{
+	width:100%;
+	
+}
+ion-content.evol div.card.tendencias div.col-80{
+	margin-top:20px;
+}

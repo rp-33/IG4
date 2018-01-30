@@ -1,0 +1,36 @@
+<ion-content style="background-image:url(img/fondo-login.png);background-size:100% 100%">
+
+<div class="content-login">
+	<img src="img/icon.png" alt="">
+	<p class="text-center">
+		<p class="text-center assertive">		
+			<span class="balanced"><span>i</span>g4 | agronomía</span>
+		</p>
+		
+		<p class="text-center">Agricultura razonada</p>
+	</p>
+	<form name="userForm"  ng-submit="userForm.$valid && login(user)" novalidate>
+		<div class="list list-inset">
+          	<label class="item item-input">
+          		<i class="icon ion-checkmark-round balanced" ng-show="!userForm.user.$error.required  && userForm.$submitted"></i>
+            	<i class="icon ion-close-round assertive" ng-show="userForm.user.$error.required  && userForm.$submitted"></i>
+          		
+            	<input type="text" placeholder="Correo electronico" name="user" ng-model="user.name" ng-required="true">
+          	</label> 
+        </div>
+
+        <div class="list list-inset">
+          	<label class="item item-input">
+          		<i class="icon ion-checkmark-round balanced" ng-show="!userForm.password.$error.required  && userForm.$submitted"></i>
+            	<i class="icon ion-close-round assertive" ng-show="userForm.password.$error.required  && userForm.$submitted"></i>
+            	<input type="password" placeholder="Contraseña" name="password" ng-model="user.password" ng-required="true">
+          	</label>       	
+        </div>
+        <input type="submit" class="button button-block button-balanced" value="Entrar" ng-model="user.button" ng-disabled="user.button">
+        
+		
+	</form>
+
+</div>
+
+</ion-content>

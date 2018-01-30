@@ -1,0 +1,23 @@
+<ion-view view-title="riesgos">
+
+	<div class="card loading" ng-show="loading">
+    	<p class="text-center">cargando...</p>
+  	</div>
+
+  <ion-content class="padding">
+  	<section class="card" ng-show="result.bool && !loading">
+      <p class="text-center">datos no se encuentran</p>
+    </section>
+
+    <section ng-show="!loading && !result.bool">
+
+	<div class="card">
+
+  		<canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series"> 
+		</canvas>
+	</div>
+
+	</section>
+
+  </ion-content>
+</ion-view>

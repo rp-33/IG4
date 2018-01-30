@@ -1,0 +1,22 @@
+<ion-pane>
+	<div class="bar bar-header bar-dark">
+  		<h1 class="title assertive">ig4 | agronomia</h1>
+  		<button class="button icon ion-power button-clear"  ui-sref="login"></button>
+	</div>
+	<ion-content class="has-header seasons" style="background-image:url(img/fondo-footer.png);background-size:100% 100%;overflow-y:hidden !important">
+
+			<ul class="list">
+    			<li class="item" ng-repeat="item in items">
+					<h2 class="balanced">{{item.name}}</h2>
+					<ul class="list">
+    					<li class="item" ng-repeat="i in item.array" ng-click="id(i.id,item.name)">
+							<p style="margin-left:20px;">{{i.name}}</p>
+    					</li>
+					</ul>
+    			</li>
+			</ul>
+  		
+
+	</ion-content>
+
+</ion-pane>

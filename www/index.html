@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="lib/chart.js/dist/Chart.min.js"></script>
+    <script src="lib/angular-chart.js/dist/angular-chart.min.js"></script>
+
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/route.js"></script>
+    <script src="js/services/AuthentificateService.js"></script>
+    <script src="js/services/Base64Service.js"></script>
+    <script src="js/services/ParseJsonService.js"></script>
+    <script src="js/services/FilterCanvasService.js"></script>
+    <script src="js/controllers/CtrlLogin.js"></script>
+    <script src="js/controllers/CtrlSeasons.js"></script>
+    <script src="js/controllers/CtrlEvol.js"></script>
+    <script src="js/controllers/CtrlEstado.js"></script>
+    <script src="js/controllers/CtrlRiesgos.js"></script>
+    <script src="js/controllers/CtrlDescarga.js"></script>
+
+
+  </head>
+  <body ng-app="app">
+
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>
