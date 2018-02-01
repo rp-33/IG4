@@ -21,8 +21,8 @@ function CtrlRiesgos($scope,$http,localStorageService,FilterCanvas){
       last_7_days = response.data['last_7_days'];
       
       for(var i=0;i<last_7_days.length;i++){
-        $scope.result.labels.push(FilterCanvas.labelsBar(last_7_days[i].date))
-        $scope.result.data.push(last_7_days[i].value['P1'].accumulated)
+        $scope.result.labels.push(FilterCanvas.labelsBar(last_7_days[i].date));
+        $scope.result.data.push(last_7_days[i].value['Riego'].accumulated)
       }
       $scope.loading = false;
 

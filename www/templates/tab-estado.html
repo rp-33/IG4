@@ -15,8 +15,9 @@
       		<h3 class="text-center balanced">Zona de trabajo</h3>
   			<p class="text-center balanced">(normalizada de 0 al 100%)</p>
   			<div class="progress">
-  				<div ng-style="progress"></div>
-			</div>
+  				<div ng-style="progress" rp-progress={{number}}></div>
+          <span class="number">{{number | number:1}}%</span>
+			 </div>
   			<h3 class="text-center dark">Zona alta</h3>
   			<p class="text-center">ultima medida : <b>{{result.date}}</b> </p>
     	</div>
