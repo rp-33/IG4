@@ -4,6 +4,7 @@ angular.module('app')
 function CtrlSeasons($scope,$state,$ionicHistory,localStorageService,ParseJson){
 	
 	$scope.items = ParseJson.decode(localStorageService.get('seasons'));
+	
 	$scope.id = function (id,name){
 		localStorageService.add('seasonName',name)
 		localStorageService.add('root',id);

@@ -1,7 +1,7 @@
 angular.module('app')
-.controller('CtrlEvol',['$scope','$http','localStorageService','FilterCanvas',CtrlEvol])
+.controller('CtrlEvol',['$scope','$http','localStorageService','FilterCanvas','Config',CtrlEvol])
 
-function CtrlEvol($scope,$http,localStorageService,FilterCanvas){
+function CtrlEvol($scope,$http,localStorageService,FilterCanvas,Config){
 
 	var datos = new Array();
   $scope.color=["#45b7cd"];
@@ -14,12 +14,8 @@ function CtrlEvol($scope,$http,localStorageService,FilterCanvas){
     sondas:null
 	};
 
-	var config = {headers:  {
-        'Authorization': 'Basic ' +localStorageService.get('base64')+'==',
-        'Accept': 'application/json;odata=verbose',
-        "X-Testing" : "testing"
-    	}
-  	};
+	const config = Config.Headers(localStorageService.get('base64'))
+
 	$http.get("http://globalsens.com:5005/"+localStorageService.get('user')+"/nodes/"+localStorageService.get('root')+"/workspace/evolution", config).then(function (response){
     	datos = response.data['last_7_days_saturation'];
     	$scope.result.trend = response.data['trend'].trend_points;
@@ -31,13 +27,10 @@ function CtrlEvol($scope,$http,localStorageService,FilterCanvas){
 			 $scope.result.data.unshift(datos[i].value.result);
 		  }
 
-
-
-
   	},function (){
   		$scope.result.bool = false;
   		$scope.loading = false;
-  	})
+  })
 
     $http.get("http://globalsens.com:5005/"+localStorageService.get('user')+"/nodes/"+localStorageService.get('root')+"/irrigation/recommendation", config).then(function (response){
       $scope.result.sondas = response.data.response;

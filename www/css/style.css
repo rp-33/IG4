@@ -9,7 +9,7 @@ ion-content.seasons{
 	margin-bottom:0px !important;
 }
 
-div.card.loading{
+div.card.loading,section.card.loading{
 	position: fixed;
 	width: 60%;
 	margin-left: 20%;
@@ -19,7 +19,7 @@ div.card.loading{
 	padding-bottom: 10px;
 }
 
-div.card.loading p{
+div.card.loading p,section.card.loading p{
 	margin-top: 10px
 }
 
@@ -105,23 +105,24 @@ div.list-inset label input::-o-placeholder { color: black; }
 		border-top: 8px solid #61bfaf; 
 		border-left: 8px solid #61bfaf; 
 		border-right: 8px solid #61bfaf; 
-     	border-radius: 150px 150px 0px 0px;
+     	border-radius: 150px 150px 5px 5px;
 }
 div.progress div{
-	width: 145px;
+	width: 140px;
 		height:4px;
 		background: #61bfaf;
 		border-radius: 2px;
 		bottom: 0px;
 		position: absolute;
-		transform-origin:  center right;
-
-		
+		transform-origin: center right;
+		-webkit-transform-origin: center right;
+		-moz-transform-origin: center right;
+		-o-transform-origin: center right;
 }
 div.progress span.number{
 		position: absolute;
 		bottom:-20px;
-		left: 47%;
+		left: 120px;
 		font-weight: bold;
 		color: #61bfaf
 	}

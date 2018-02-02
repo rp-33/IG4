@@ -1,7 +1,7 @@
 angular.module('app')
-.controller('CtrlRiesgos',['$scope','$http','localStorageService','FilterCanvas',CtrlRiesgos])
+.controller('CtrlRiesgos',['$scope','$http','localStorageService','FilterCanvas','Config',CtrlRiesgos])
 
-function CtrlRiesgos($scope,$http,localStorageService,FilterCanvas){
+function CtrlRiesgos($scope,$http,localStorageService,FilterCanvas,Config){
 
 
   $scope.loading = true;
@@ -11,12 +11,9 @@ function CtrlRiesgos($scope,$http,localStorageService,FilterCanvas){
     bool:false
   } 
   var last_7_days = new Array();
-	var config = {headers:  {
-        'Authorization': 'Basic ' +localStorageService.get('base64')+'==',
-        'Accept': 'application/json;odata=verbose',
-        "X-Testing" : "testing"
-    	}
-  	};
+
+	const config = Config.Headers(localStorageService.get('base64'))
+
 	$http.get("http://globalsens.com:5005/"+localStorageService.get('user')+"/nodes/"+localStorageService.get('root')+"/irrigation", config).then(function (response){
       last_7_days = response.data['last_7_days'];
       
@@ -30,7 +27,7 @@ function CtrlRiesgos($scope,$http,localStorageService,FilterCanvas){
   	$scope.loading = false;
     $scope.result.bool=true
 
-  	})
+  })
 
 
 	$scope.labels = $scope.result.labels;

@@ -5,8 +5,8 @@
   	</div>
 
   <ion-content class="padding">
-  	<section class="card" ng-show="result.bool && !loading">
-      <p class="text-center">datos no se encuentran</p>
+  	<section class="card loading" ng-show="result.bool && !loading">
+      <p class="text-center">No hay datos disponibles</p>
     </section>
 
     <section ng-show="!loading && !result.bool">
